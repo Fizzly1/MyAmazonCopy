@@ -376,7 +376,7 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header! -->
     <header class="header">
         <div class="header-container">
             <div class="logo">🛒 ShopMart</div>
@@ -451,7 +451,7 @@
             </div>
         </section>
 
-        <!-- Products -->
+        <!-- Products! -->
         <section class="products">
             <h2 class="section-title">สินค้าแนะนำ</h2>
             <div class="products-grid" id="productsGrid">
@@ -460,7 +460,7 @@
         </section>
     </main>
 
-    <!-- Cart Modal -->
+    <!-- Cart Modal! -->
     <div class="modal" id="cartModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeCart()">&times;</span>
@@ -482,7 +482,7 @@
     </footer>
 
     <script>
-        // Sample product data
+        // Sample product data!
         const products = [
             {
                 id: 1,
@@ -579,13 +579,13 @@
         let cart = [];
         let currentCategory = 'all';
 
-        // Initialize the page
+        // Initialize the page!
         function init() {
             displayProducts(products);
             updateCartCount();
         }
 
-        // Display products
+        // Display products!
         function displayProducts(productList) {
             const grid = document.getElementById('productsGrid');
             grid.innerHTML = '';
@@ -609,7 +609,7 @@
             });
         }
 
-        // Show products by category
+        // Show products by category!
         function showCategory(category) {
             currentCategory = category;
             if (category === 'all') {
@@ -620,7 +620,7 @@
             }
         }
 
-        // Add to cart
+        // Add to cart!
         function addToCart(productId) {
             const product = products.find(p => p.id === productId);
             const existingItem = cart.find(item => item.id === productId);
@@ -644,13 +644,13 @@
             }, 1500);
         }
 
-        // Update cart count
+        // Update cart count!
         function updateCartCount() {
             const count = cart.reduce((total, item) => total + item.quantity, 0);
             document.getElementById('cartCount').textContent = count;
         }
 
-        // Open cart modal
+        // Open cart modal!
         function openCart() {
             const modal = document.getElementById('cartModal');
             const cartItems = document.getElementById('cartItems');
@@ -688,19 +688,19 @@
             modal.style.display = 'block';
         }
 
-        // Close cart modal
+        // Close cart modal!
         function closeCart() {
             document.getElementById('cartModal').style.display = 'none';
         }
 
-        // Remove from cart
+        // Remove from cart!
         function removeFromCart(index) {
             cart.splice(index, 1);
             updateCartCount();
-            openCart(); // Refresh cart display
+            openCart(); // Refresh cart display!
         }
 
-        // Checkout
+        // Checkout!
         function checkout() {
             if (cart.length === 0) {
                 alert('ตะกร้าของคุณว่างเปล่า');
@@ -714,7 +714,7 @@
             closeCart();
         }
 
-        // Search functionality
+        // Search functionality!
         document.getElementById('searchInput').addEventListener('input', function(e) {
             const searchTerm = e.target.value.toLowerCase();
             const filtered = products.filter(product => 
@@ -723,7 +723,7 @@
             displayProducts(filtered);
         });
 
-        // Close modal when clicking outside
+        // Close modal when clicking outside!
         window.onclick = function(event) {
             const modal = document.getElementById('cartModal');
             if (event.target === modal) {
@@ -731,8 +731,9 @@
             }
         }
 
-        // Initialize the page
+        // Initialize the page!
         init();
     </script>
 </body>
+    <!-- Credit: Fizzly1 AI: Claude -->
 </html>
